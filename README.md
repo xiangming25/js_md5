@@ -11,7 +11,7 @@ js_md5加密密码, node后台使用crypto加密密码
 ## 使用前提
 ==安装了nodejs 的koa 框架==  
 
-如果没有安装koa,请执行一下命令  
+如果没有安装koa,请执行以下命令  
 
 ```
 npm install -g koa-generator
