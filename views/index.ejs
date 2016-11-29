@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js md5加密</title>
+</head>
+<body>
+	<input type="password" name="" id="password">
+	<br>
+	<button type="button" id="submit" onclick="submit()">确定</button>
+	<script type="text/javascript" src="/javascripts/md5.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.js"></script>
+	<script type="text/javascript">
+		function submit(){
+			var pwd = document.getElementById('password').value,
+				pwdNew = hex_md5(pwd);
+
+			console.log("pwd:=====");
+			console.log("原始密码为："+pwd);
+			console.log("pwdNew:====");
+			console.log("加密后的密码："+pwdNew);
+			// alert(pwd);
+			// alert(pwdNew);
+			var params = {
+				password : pwdNew
+			};
+			$.post('/checkPwd',params,function(response){
+				console.log(response);
+			});
+		}
+	</script>
+</body>
+</html>
